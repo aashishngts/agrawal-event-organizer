@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const services = [
   {
@@ -23,14 +24,15 @@ const services = [
   },
 ];
 
+
 const Services = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="py-24 bg-[#f4f4f4]">
       <div className="max-w-7xl mx-auto px-6">
-
         {/* Top Section */}
         <div className="grid md:grid-cols-3 gap-10 items-center mb-16">
-          
           {/* Left Heading */}
           <div>
             <p className="text-red-600 font-semibold tracking-[0.3em] uppercase text-sm">
@@ -49,7 +51,10 @@ const Services = () => {
               that will WOW your crowd. Check out how we can serve you!
             </p>
 
-            <button className="bg-red-600 text-white px-8 py-4 uppercase tracking-widest font-semibold hover:bg-black transition-all duration-300">
+            <button
+              onClick={() => navigate("/services")}
+              className="bg-red-600 text-white px-8 py-4 uppercase tracking-widest font-semibold hover:bg-black transition-all duration-300"
+            >
               All Services
             </button>
           </div>
@@ -84,7 +89,6 @@ const Services = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
