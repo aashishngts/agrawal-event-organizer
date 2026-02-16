@@ -1,0 +1,134 @@
+import Footer from "../layout/Footer";
+
+const servicesData = [
+  {
+    title: "Live Concerts",
+    description:
+      "Our Experience and expertise in setting up and calibrating Sound and light Systems for Live Concerts. We have also complimented these capabilities with staging and lighting services. In that everlasting moment before the audience is instantaneously wowed, our clients feel confidence in our audio production.",
+    image:
+      "https://images.unsplash.com/photo-1506157786151-b8491531f063",
+    reverse: false,
+    letter: "L",
+  },
+  {
+    title: "Fashion Shows",
+    description:
+      "From initial conception and budget development through on-site event coordination, we provide complete production services for fashion shows. Over the past years, we have organized fashion shows for a large number of clients and ensure them of timely execution of the necessary tasks.",
+    image:
+      "https://images.unsplash.com/photo-1521335629791-ce4aec67dd53",
+    reverse: true,
+    letter: "F",
+  },
+  {
+    title: "Corporate Meets",
+    description:
+      "When we design, plan and deliver your Corporate event, fulfilling your Corporate vision is our primary concern. Dedicated to making visual statements by executing events for prominent corporations, we infuse style and flair into your corporate events.",
+    image:
+      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678",
+    reverse: false,
+    letter: "C",
+  },
+  {
+    title: "Brand Events",
+    description:
+      "Our Experience and expertise in setting up and calibrating Sound and light Systems for Live Concerts. We have also complimented these capabilities with staging and lighting services.",
+    image:
+      "https://images.unsplash.com/photo-1515169067868-5387ec356754",
+    reverse: true,
+    letter: "B",
+  },
+  {
+    title: "Theme Parties",
+    description:
+      "When it comes to organizing your themed party, we offer our exotic efforts for the creation of unforgettable events for you. Our imaginative approach will bring your concept to life.",
+    image:
+      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819",
+    reverse: false,
+    letter: "T",
+  },
+  {
+    title: "Weddings",
+    description:
+      "We offer a suite of wedding planning services to fulfill all your needs. We add a personal touch and a creative eye, combining your wedding with style and imagination.",
+    image:
+      "https://images.unsplash.com/photo-1519741497674-611481863552",
+    reverse: true,
+    letter: "W",
+  },
+];
+
+const Services = () => {
+  return (
+    <>
+      {/* HERO */}
+      <section
+        className="h-[60vh] bg-cover bg-center relative flex items-center justify-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745')",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+        <h1 className="relative z-10 text-white text-6xl font-bold tracking-widest uppercase">
+          Services
+        </h1>
+      </section>
+
+      {/* SERVICES LIST */}
+      <section className="bg-[#f3f3f3] py-24">
+        <div className="max-w-7xl mx-auto px-6 space-y-32">
+
+          {servicesData.map((service, index) => (
+            <div
+              key={index}
+              className={`grid md:grid-cols-2 gap-16 items-center ${
+                service.reverse ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              {/* TEXT SIDE */}
+              <div className="relative">
+
+                {/* Big Background Letter */}
+                <span className="absolute -top-16 left-0 text-[200px] font-bold text-gray-200 z-0 select-none">
+                  {service.letter}
+                </span>
+
+                <div className="relative z-10">
+                  <div className="flex items-center gap-4 mb-4">
+                    <span className="text-red-600 uppercase text-sm tracking-widest">
+                      Services
+                    </span>
+                    <div className="h-[2px] w-24 bg-red-600"></div>
+                  </div>
+
+                  <h2 className="text-5xl font-extrabold uppercase mb-6">
+                    {service.title}
+                  </h2>
+
+                  <p className="text-gray-600 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* IMAGE SIDE */}
+              <div className="relative flex justify-center">
+                <div className="absolute bg-red-600 w-[90%] h-[90%] -bottom-6 -right-6 z-0"></div>
+
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="relative z-10 w-full max-w-lg object-cover shadow-lg"
+                />
+              </div>
+            </div>
+          ))}
+
+        </div>
+      </section>
+      <Footer/>
+    </>
+  );
+};
+
+export default Services;
