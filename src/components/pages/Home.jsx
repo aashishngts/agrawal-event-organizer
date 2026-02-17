@@ -1,21 +1,24 @@
 import Footer from "../layout/Footer";
 import AboutSection from "../sections/AboutSection";
 import Brands from "../sections/Brands";
+import Equipments from "../sections/Equipments";
 import EventTypes from "../sections/EventTypes";
 import Founder from "../sections/Founder";
 import Hero from "../sections/Hero";
+import InstagramReel from "../sections/InstagramReel";
 import Services from "../sections/Services";
-
 
 const Home = () => {
   return (
     <>
       <Hero />
-      <Brands/>
       <Services />
-      <AboutSection/>
-      <Founder/>
-      <EventTypes/>
+      <EventTypes />
+      {/* <AboutSection/> */}
+      <Brands />
+      {/* <Founder/> */}
+      <Equipments />
+      <InstagramReel />
       <Footer />
     </>
   );

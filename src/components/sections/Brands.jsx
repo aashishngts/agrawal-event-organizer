@@ -35,7 +35,7 @@ const equipments = [
   {
     name: "Audio Mixing Console",
     image:
-      "https://images.unsplash.com/photo-1665221965525-87fe35deabdd?q=80&w=756&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1665221965525-87fe35deabdd?q=80&w=756&auto=format&fit=crop",
   },
   {
     name: "Stage Lighting System",
@@ -44,15 +44,31 @@ const equipments = [
   },
 ];
 
-// 🔁 Duplicate items for seamless loop
 const loopItems = [...equipments, ...equipments];
 
 const EquipmentCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [transition, setTransition] = useState(true);
+  const [itemsPerView, setItemsPerView] = useState(4);
 
-  const itemsPerView = 4;
   const total = equipments.length;
+
+  // ✅ Responsive items per view
+  useEffect(() => {
+    const updateItems = () => {
+      if (window.innerWidth < 640) {
+        setItemsPerView(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsPerView(2);
+      } else {
+        setItemsPerView(4);
+      }
+    };
+
+    updateItems();
+    window.addEventListener("resize", updateItems);
+    return () => window.removeEventListener("resize", updateItems);
+  }, []);
 
   // 🔥 Auto Scroll
   useEffect(() => {
@@ -63,7 +79,7 @@ const EquipmentCarousel = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // 🧠 Seamless Reset (No Jump Effect)
+  // 🔁 Seamless Reset
   useEffect(() => {
     if (currentIndex >= total) {
       setTimeout(() => {
@@ -88,33 +104,33 @@ const EquipmentCarousel = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="flex justify-between items-end mb-12">
+        <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-6 mb-8 sm:mb-12">
           <div>
-            <h2 className="text-3xl sm:text-5xl font-black text-black mb-2">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black text-black mb-1">
               Professional
             </h2>
-            <h3 className="text-3xl sm:text-5xl font-black">
+            <h3 className="text-2xl sm:text-4xl lg:text-5xl font-black">
               <span className="text-red-600">Sound & Lighting</span>
               <span className="text-black"> Setup</span>
             </h3>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-3 sm:gap-4">
             <button
               onClick={() => scroll("prev")}
-              className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center"
+              className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-black text-white flex items-center justify-center"
             >
-              <ChevronLeft size={24} />
+              <ChevronLeft size={18} />
             </button>
             <button
               onClick={() => scroll("next")}
-              className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center"
+              className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-black text-white flex items-center justify-center"
             >
-              <ChevronRight size={24} />
+              <ChevronRight size={18} />
             </button>
           </div>
         </div>
@@ -122,28 +138,26 @@ const EquipmentCarousel = () => {
         {/* Carousel */}
         <div className="relative overflow-hidden">
           <div
-            className="flex gap-6"
+            className="flex gap-4 sm:gap-6"
             style={{
               transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
-              transition: transition
-                ? "transform 0.5s ease"
-                : "none",
+              transition: transition ? "transform 0.5s ease" : "none",
             }}
           >
             {loopItems.map((item, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-full sm:w-1/4 group"
+                className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 group"
               >
-                <div className="relative rounded-2xl overflow-hidden shadow-lg h-80 sm:h-96">
+                <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-md sm:shadow-lg h-56 sm:h-72 md:h-80 lg:h-96">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                  <div className="absolute bottom-0 p-6">
-                    <h3 className="text-white text-lg font-bold">
+                  <div className="absolute bottom-0 p-4 sm:p-6">
+                    <h3 className="text-white text-sm sm:text-lg font-bold">
                       {item.name}
                     </h3>
                   </div>

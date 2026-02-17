@@ -1,8 +1,7 @@
-// import HeroImages from "../../assets/Hero.webp";
+import HeroImages from "../../assets/Hero2.jpg";
 
 
 
-const HeroImages = 'https://iqrorwxhljollr5q.leadongcdn.com/cloud/miBpmKojRlkSmmljkjlpl/Mike_Kalambay_-_Live_Explo_C-l-bration_maajabu-gospel.jpg'
 const Hero = () => {
   return (
     <section

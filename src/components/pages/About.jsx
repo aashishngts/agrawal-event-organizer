@@ -1,6 +1,7 @@
-import owner from "../../assets/owner1.webp";
+import owner from "../../assets/images/Anoop-agrwal.png";
 import waveBg from "../../assets/images/wave-abstract-2.png"; // <-- add this
 import Footer from "../layout/Footer";
+import signature from "../../assets/images/signature.png";
 
 const About = () => {
   return (
@@ -24,39 +25,44 @@ const About = () => {
 
       {/* ABOUT CONTENT SECTION */}
       <section className="relative bg-gray-100 py-20 overflow-hidden">
-        
         {/* Background Wave Image */}
         <img
           src={waveBg}
           alt="background wave"
-          className="absolute bottom-0 left-0 w-[950px] opacity-10 pointer-events-none select-none"
+          className="absolute bottom-0 left-0 w-[980px] opacity-10 pointer-events-none select-none"
         />
 
-        <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-          
-          <div>
-            <h2 className="text-xl font-semibold tracking-widest uppercase mb-6 text-red-600">
+        <div className="relative max-w-full mx-4 md:mx-10 px-4 md:px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <div className="order-2 md:order-1 text-center md:text-left">
+            <h2 className="text-lg sm:text-xl font-semibold tracking-widest uppercase mb-6 text-red-600">
               Our Legacy & Vision
             </h2>
 
-            <p className="text-gray-600 leading-relaxed mb-6">
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-6">
               Agarwal Sound & Lighting delivers professional sound systems,
               advanced lighting solutions, staging structures, and LED setups
               for weddings, concerts, corporate events, and large public shows.
             </p>
 
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed mb-2">
               We combine technical expertise with creative execution to
               transform venues into immersive experiences powered by sound,
               light, and precision engineering.
             </p>
+
+            {/* Signature Image */}
+            <img
+              src={signature}
+              alt="Founder Signature"
+              className="w-28 sm:w-36 md:w-44 object-contain mx-auto md:mx-0 mt-2"
+            />
           </div>
 
-          <div className="flex justify-center">
+          <div className="order-1 md:order-2 flex justify-center mb-8 md:mb-0">
             <img
               src={owner}
-              alt="Agarwal Team"
-              className="w-80 h-80 object-cover rounded-2xl shadow-2xl"
+              alt="Founder"
+              className=" w-56 h-56  sm:w-64 sm:h-64  md:w-72 md:h-72  object-cover  rounded-full  shadow-2xl  border-4 border-white"
             />
           </div>
         </div>
@@ -64,7 +70,7 @@ const About = () => {
 
       {/* EQUIPMENT CARDS SECTION */}
       <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-full mx-10 px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-extrabold uppercase">
               Our Equipment & Services
@@ -75,7 +81,6 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-            
             {/* MUSIC & LIGHTING CARD */}
             <div className="bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
               <div className="overflow-hidden">
@@ -141,7 +146,6 @@ const About = () => {
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
       </section>

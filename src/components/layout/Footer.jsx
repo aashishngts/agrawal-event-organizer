@@ -7,25 +7,28 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
+import FooterImg from "../../assets/images/Footer.jpeg";
+import logo from "../../assets/images/logo.png";
+
 const Footer = () => {
   return (
     <footer
       className="relative bg-cover bg-center text-white pt-16 md:pt-20 pb-10 overflow-hidden"
       style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=2000&fit=crop')",
+        backgroundImage: `url(${FooterImg})`,
       }}
     >
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/85"></div>
+      <div className="absolute inset-0 bg-black/60"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
-        
+      <div className="relative z-10 max-w-full mx-10 px-4 md:px-6">
         {/* ================= LOGO & DESCRIPTION ================= */}
         <div className="text-center mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-widest">
-            AGARWAL
-          </h1>
+          <img
+            src={logo}
+            alt="Agarwal Sound & Lighting Logo"
+            className="mx-auto w-36 sm:w-44 md:w-56 lg:w-64 object-contain"
+          />
 
           <p className="mt-6 max-w-3xl mx-auto text-gray-300 leading-relaxed text-sm sm:text-base">
             At Agarwal, we specialize in complete event service solutions
@@ -57,7 +60,6 @@ const Footer = () => {
 
         {/* ================= CONTACT GRID ================= */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-sm text-center md:text-left">
-          
           {/* Branch Office */}
           <div>
             <h3 className="text-red-600 uppercase tracking-widest mb-4">

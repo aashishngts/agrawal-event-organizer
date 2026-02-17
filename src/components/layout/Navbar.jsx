@@ -1,5 +1,6 @@
 import { NavLink, Link } from "react-router-dom";
 import { useState } from "react";
+import Logo from "../../assets/images/agrawal-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,11 +15,14 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white text-black fixed w-full z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
-        
+      <div className="max-w-full mx-10 px-4 md:px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="text-xl md:text-2xl font-bold tracking-wide">
-          Agra<span className="text-red-600">wal</span>
+        <Link to="/" className="flex items-center">
+          <img
+            src={Logo}
+            alt="Agrawal Events Logo"
+            className="h-10 md:h-12 w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Links */}
@@ -46,9 +50,7 @@ const Navbar = () => {
           className="md:hidden w-9 h-9 flex items-center justify-center rounded-md hover:bg-gray-100 transition"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <span className="text-xl">
-            {isOpen ? "✕" : "☰"}
-          </span>
+          <span className="text-xl">{isOpen ? "✕" : "☰"}</span>
         </button>
       </div>
 

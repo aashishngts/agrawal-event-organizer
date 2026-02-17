@@ -3,9 +3,10 @@ import Footer from "../layout/Footer";
 const Events = () => {
   return (
     <>
+      
       {/* HERO SECTION */}
       <section
-        className="h-[45vh] sm:h-[55vh] bg-cover bg-center relative flex items-center justify-center text-center"
+        className="h-[40vh] sm:h-[50vh] md:h-80 bg-cover bg-center relative flex items-center justify-center text-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=2000&auto=format&fit=crop&q=80')",
@@ -13,9 +14,11 @@ const Events = () => {
       >
         <div className="absolute inset-0 bg-black/70"></div>
 
-        <h1 className="relative z-10 text-white text-3xl sm:text-4xl md:text-6xl font-bold tracking-widest uppercase px-4">
-          Events
-        </h1>
+        <div className="relative z-10 px-4">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-bold uppercase">
+            Events
+          </h1>
+        </div>
       </section>
 
       {/* INTRO TEXT */}

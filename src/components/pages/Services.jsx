@@ -54,24 +54,27 @@ const servicesData = [
 const Services = () => {
   return (
     <>
-      {/* HERO */}
+      
+      {/* HERO SECTION */}
       <section
-        className="h-[45vh] sm:h-[60vh] bg-cover bg-center relative flex items-center justify-center text-center"
+        className="h-[40vh] sm:h-[50vh] md:h-80 bg-cover bg-center relative flex items-center justify-center text-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745')",
         }}
       >
-        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
 
-        <h1 className="relative z-10 text-white text-3xl sm:text-4xl md:text-6xl font-bold tracking-widest uppercase px-4">
-          Services
-        </h1>
+        <div className="relative z-10 px-4">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-bold uppercase">
+            Services
+          </h1>
+        </div>
       </section>
 
       {/* SERVICES LIST */}
       <section className="bg-[#f3f3f3] py-24">
-        <div className="max-w-7xl mx-auto px-6 space-y-32">
+        <div className="max-w-full mx-10 px-6 space-y-32">
           {servicesData.map((service, index) => {
             const isEven = index % 2 === 0;
 

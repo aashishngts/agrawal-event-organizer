@@ -6,12 +6,14 @@ import Navbar from "../layout/Navbar";
 import Events from "../pages/Events";
 import Contact from "../pages/Contact";
 import ScrollToTop from "../layout/ScrollToTop";
+import WhatsAppFloat from "../layout/WhatsAppFloat";
 
 
 const AppRouter = () => {
   return (
     <BrowserRouter>
   <ScrollToTop />
+   <WhatsAppFloat />
 
       <Navbar />
       <Routes>

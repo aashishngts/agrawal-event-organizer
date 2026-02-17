@@ -30,7 +30,6 @@ const Services = () => {
 
   return (
     <section className="relative py-24 bg-[#f4f4f4] overflow-hidden">
-      
       {/* Background Wave Image */}
       <img
         src={waveBg}
@@ -38,11 +37,9 @@ const Services = () => {
         className="absolute -top-32 -left-32 w-[750px] opacity-10 pointer-events-none select-none"
       />
 
-      <div className="relative max-w-7xl mx-auto px-6">
-        
+      <div className="relative max-w-full mx-10 px-6">
         {/* Top Section */}
         <div className="grid md:grid-cols-3 gap-10 items-center mb-16">
-          
           {/* Left Heading */}
           <div>
             <p className="text-red-600 font-semibold tracking-[0.3em] uppercase text-sm">
@@ -84,14 +81,12 @@ const Services = () => {
                 className="absolute inset-0 w-full h-full object-cover"
               />
 
-              {/* Dark Overlay */}
-              <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition duration-300"></div>
-
-              {/* Vertical Text */}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 rotate-90 origin-right">
-                <h3 className="text-white font-bold tracking-widest text-lg">
-                  {service.title}
-                </h3>
+              <div className="absolute right-0 bottom-[-180px]   h-full flex items-center">
+                <div className="bg-black/80 px-4 py-6">
+                  <h3 className="text-white font-bold tracking-widest text-xs sm:text-sm md:text-base writing-mode-vertical">
+                    {service.title}
+                  </h3>
+                </div>
               </div>
 
               {/* Hover Border */}
