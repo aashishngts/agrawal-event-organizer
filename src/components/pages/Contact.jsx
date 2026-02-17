@@ -3,17 +3,17 @@ import Footer from "../layout/Footer";
 const Contact = () => {
   return (
     <div className="relative">
-      
       {/* HERO */}
       <section
-        className="h-[60vh] bg-cover bg-center relative flex items-center justify-center"
+        className="h-[50vh] sm:h-[60vh] bg-cover bg-center relative flex items-center justify-center text-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745')",
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
-        <h1 className="relative z-10 text-white text-6xl font-bold tracking-widest uppercase">
+
+        <h1 className="relative z-10 text-white text-3xl sm:text-4xl md:text-6xl font-bold tracking-widest uppercase px-4">
           Get in touch
         </h1>
       </section>
@@ -96,7 +96,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

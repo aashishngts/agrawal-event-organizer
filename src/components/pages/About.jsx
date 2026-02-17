@@ -6,15 +6,16 @@ const About = () => {
     <>
       {/* HERO SECTION */}
       <section
-        className="h-80 bg-cover bg-center relative flex items-center justify-center text-center"
+        className="h-[40vh] sm:h-[50vh] md:h-80 bg-cover bg-center relative flex items-center justify-center text-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1506157786151-b8491531f063?w=2000&fit=crop')",
         }}
       >
         <div className="absolute inset-0 bg-black/70"></div>
-        <div className="relative z-10 px-6">
-          <h1 className="text-white text-5xl md:text-6xl font-bold uppercase">
+
+        <div className="relative z-10 px-4">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-6xl font-bold uppercase">
             About Us
           </h1>
         </div>
@@ -133,7 +134,7 @@ const About = () => {
         </div>
       </section>
 
-      <Footer/>
+      <Footer />
     </>
   );
 };

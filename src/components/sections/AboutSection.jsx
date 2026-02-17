@@ -83,7 +83,7 @@ const About = () => {
                 <span className="text-red-600 font-bold"> 1952</span>.
               </p>
             </div>
-  ]          </div>
+          </div>
         </div>
       </section>
 

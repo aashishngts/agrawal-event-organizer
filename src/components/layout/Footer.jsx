@@ -10,7 +10,7 @@ import {
 const Footer = () => {
   return (
     <footer
-      className="relative bg-cover bg-center text-white pt-20 pb-10"
+      className="relative bg-cover bg-center text-white pt-16 md:pt-20 pb-10 overflow-hidden"
       style={{
         backgroundImage:
           "url('https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=2000&fit=crop')",
@@ -19,12 +19,15 @@ const Footer = () => {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/85"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
+        
         {/* ================= LOGO & DESCRIPTION ================= */}
-        <div className="text-center mb-10">
-          <h1 className="text-5xl font-extrabold tracking-widest">AGARWAL</h1>
+        <div className="text-center mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-widest">
+            AGARWAL
+          </h1>
 
-          <p className="mt-6 max-w-3xl mx-auto text-gray-300 leading-relaxed text-sm">
+          <p className="mt-6 max-w-3xl mx-auto text-gray-300 leading-relaxed text-sm sm:text-base">
             At Agarwal, we specialize in complete event service solutions
             including professional PA systems, advanced lighting equipment, SFX
             systems, truss structures, LED walls, and more. From live concerts
@@ -34,7 +37,7 @@ const Footer = () => {
         </div>
 
         {/* ================= NAVIGATION ================= */}
-        <div className="flex justify-center gap-10 uppercase tracking-widest text-sm mb-16">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-10 uppercase tracking-widest text-xs sm:text-sm mb-14">
           <a href="/" className="hover:text-red-500 transition">
             Home
           </a>
@@ -47,21 +50,23 @@ const Footer = () => {
           <a href="/events" className="hover:text-red-500 transition">
             Events
           </a>
-          
           <a href="/contact" className="hover:text-red-500 transition">
             Contact
           </a>
         </div>
 
         {/* ================= CONTACT GRID ================= */}
-        <div className="grid md:grid-cols-3 gap-12 text-sm">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-sm text-center md:text-left">
+          
           {/* Branch Office */}
           <div>
             <h3 className="text-red-600 uppercase tracking-widest mb-4">
-              Branch Office :
+              Branch Office
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              Scheme No 54, <br/>Indore Madhya Pradesh <br/>452010
+              Scheme No 54 <br />
+              Indore, Madhya Pradesh <br />
+              452010
             </p>
           </div>
 
@@ -78,14 +83,14 @@ const Footer = () => {
             <h3 className="text-red-600 uppercase tracking-widest mb-4">
               Email Us
             </h3>
-            <p className="text-gray-300  tracking-widest">
+            <p className="text-gray-300 break-words">
               agrawalsoundlight@gmail.com
             </p>
           </div>
         </div>
 
         {/* ================= SOCIAL ICONS ================= */}
-        <div className="flex justify-center gap-6 mt-16 text-lg">
+        <div className="flex justify-center gap-5 mt-14 text-lg">
           <FaFacebookF className="hover:text-red-500 cursor-pointer transition" />
           <FaTwitter className="hover:text-red-500 cursor-pointer transition" />
           <FaLinkedinIn className="hover:text-red-500 cursor-pointer transition" />
@@ -94,7 +99,7 @@ const Footer = () => {
         </div>
 
         {/* ================= BOTTOM BAR ================= */}
-        <div className="flex flex-col md:flex-row justify-between items-center mt-16 text-xs text-gray-400 border-t border-gray-700 pt-6">
+        <div className="flex flex-col md:flex-row justify-between items-center mt-14 text-xs text-gray-400 border-t border-gray-700 pt-6 text-center md:text-left gap-4">
           <p>
             © 2026{" "}
             <span className="font-semibold text-white">
@@ -103,7 +108,7 @@ const Footer = () => {
             All rights reserved.
           </p>
 
-          <div className="flex gap-4 mt-4 md:mt-0 uppercase tracking-wider">
+          <div className="flex flex-wrap justify-center gap-3 uppercase tracking-wider">
             <span className="hover:text-white cursor-pointer">
               Privacy Policy
             </span>

@@ -5,8 +5,7 @@ const servicesData = [
     title: "Live Concerts",
     description:
       "Our Experience and expertise in setting up and calibrating Sound and light Systems for Live Concerts. We have also complimented these capabilities with staging and lighting services. In that everlasting moment before the audience is instantaneously wowed, our clients feel confidence in our audio production.",
-    image:
-      "https://images.unsplash.com/photo-1506157786151-b8491531f063",
+    image: "https://images.unsplash.com/photo-1506157786151-b8491531f063",
     reverse: false,
     letter: "L",
   },
@@ -14,8 +13,7 @@ const servicesData = [
     title: "Fashion Shows",
     description:
       "From initial conception and budget development through on-site event coordination, we provide complete production services for fashion shows. Over the past years, we have organized fashion shows for a large number of clients and ensure them of timely execution of the necessary tasks.",
-    image:
-      "https://images.unsplash.com/photo-1521335629791-ce4aec67dd53",
+    image: "https://images.unsplash.com/photo-1521335629791-ce4aec67dd53",
     reverse: true,
     letter: "F",
   },
@@ -23,8 +21,7 @@ const servicesData = [
     title: "Corporate Meets",
     description:
       "When we design, plan and deliver your Corporate event, fulfilling your Corporate vision is our primary concern. Dedicated to making visual statements by executing events for prominent corporations, we infuse style and flair into your corporate events.",
-    image:
-      "https://images.unsplash.com/photo-1505373877841-8d25f7d46678",
+    image: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678",
     reverse: false,
     letter: "C",
   },
@@ -32,8 +29,7 @@ const servicesData = [
     title: "Brand Events",
     description:
       "Our Experience and expertise in setting up and calibrating Sound and light Systems for Live Concerts. We have also complimented these capabilities with staging and lighting services.",
-    image:
-      "https://images.unsplash.com/photo-1515169067868-5387ec356754",
+    image: "https://images.unsplash.com/photo-1515169067868-5387ec356754",
     reverse: true,
     letter: "B",
   },
@@ -41,8 +37,7 @@ const servicesData = [
     title: "Theme Parties",
     description:
       "When it comes to organizing your themed party, we offer our exotic efforts for the creation of unforgettable events for you. Our imaginative approach will bring your concept to life.",
-    image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819",
+    image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819",
     reverse: false,
     letter: "T",
   },
@@ -50,8 +45,7 @@ const servicesData = [
     title: "Weddings",
     description:
       "We offer a suite of wedding planning services to fulfill all your needs. We add a personal touch and a creative eye, combining your wedding with style and imagination.",
-    image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552",
+    image: "https://images.unsplash.com/photo-1519741497674-611481863552",
     reverse: true,
     letter: "W",
   },
@@ -62,14 +56,15 @@ const Services = () => {
     <>
       {/* HERO */}
       <section
-        className="h-[60vh] bg-cover bg-center relative flex items-center justify-center"
+        className="h-[45vh] sm:h-[60vh] bg-cover bg-center relative flex items-center justify-center text-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745')",
         }}
       >
         <div className="absolute inset-0 bg-black/60"></div>
-        <h1 className="relative z-10 text-white text-6xl font-bold tracking-widest uppercase">
+
+        <h1 className="relative z-10 text-white text-3xl sm:text-4xl md:text-6xl font-bold tracking-widest uppercase px-4">
           Services
         </h1>
       </section>
@@ -77,7 +72,6 @@ const Services = () => {
       {/* SERVICES LIST */}
       <section className="bg-[#f3f3f3] py-24">
         <div className="max-w-7xl mx-auto px-6 space-y-32">
-
           {servicesData.map((service, index) => (
             <div
               key={index}
@@ -87,7 +81,6 @@ const Services = () => {
             >
               {/* TEXT SIDE */}
               <div className="relative">
-
                 {/* Big Background Letter */}
                 <span className="absolute -top-16 left-0 text-[200px] font-bold text-gray-200 z-0 select-none">
                   {service.letter}
@@ -123,10 +116,9 @@ const Services = () => {
               </div>
             </div>
           ))}
-
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </>
   );
 };

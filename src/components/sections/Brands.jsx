@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const equipments = [
@@ -44,39 +44,54 @@ const equipments = [
   },
 ];
 
+// 🔁 Duplicate items for seamless loop
+const loopItems = [...equipments, ...equipments];
+
 const EquipmentCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollContainerRef = useRef(null);
+  const [transition, setTransition] = useState(true);
+
   const itemsPerView = 4;
-  const maxIndex = equipments.length - itemsPerView;
+  const total = equipments.length;
 
-  const scroll = (direction) => {
-    if (direction === "prev") {
-      setCurrentIndex((prev) => Math.max(prev - 1, 0));
-    } else {
-      setCurrentIndex((prev) => Math.min(prev + 1, maxIndex));
+  // 🔥 Auto Scroll
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => prev + 1);
+    }, 2500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  // 🧠 Seamless Reset (No Jump Effect)
+  useEffect(() => {
+    if (currentIndex >= total) {
+      setTimeout(() => {
+        setTransition(false);
+        setCurrentIndex(0);
+      }, 500);
+
+      setTimeout(() => {
+        setTransition(true);
+      }, 550);
     }
-  };
+  }, [currentIndex, total]);
 
-  const handleCardHover = (index) => {
-    // Smooth scroll to card if needed
-    if (scrollContainerRef.current) {
-      const container = scrollContainerRef.current;
-      const cards = container.querySelectorAll(".carousel-card");
-      if (cards[index]) {
-        const cardLeft = cards[index].offsetLeft;
-        const containerLeft = container.offsetLeft;
-        const scrollLeft = cardLeft - containerLeft;
-        // Optional: auto-scroll on hover
-      }
+  const scroll = (dir) => {
+    if (dir === "prev") {
+      setCurrentIndex((prev) =>
+        prev === 0 ? total - 1 : prev - 1
+      );
+    } else {
+      setCurrentIndex((prev) => prev + 1);
     }
   };
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
 
+        {/* Header */}
         <div className="flex justify-between items-end mb-12">
           <div>
             <h2 className="text-3xl sm:text-5xl font-black text-black mb-2">
@@ -88,59 +103,47 @@ const EquipmentCarousel = () => {
             </h3>
           </div>
 
-          {/* Navigation Arrows */}
           <div className="flex gap-4">
             <button
               onClick={() => scroll("prev")}
-              disabled={currentIndex === 0}
-              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-black hover:bg-gray-800 disabled:bg-gray-300 text-white flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
-              aria-label="Previous items"
+              className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={() => scroll("next")}
-              disabled={currentIndex === maxIndex}
-              className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-black hover:bg-gray-800 disabled:bg-gray-300 text-white flex items-center justify-center transition-all duration-300 shadow-lg hover:shadow-xl"
-              aria-label="Next items"
+              className="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center"
             >
               <ChevronRight size={24} />
             </button>
           </div>
         </div>
 
-        {/* Carousel Container */}
+        {/* Carousel */}
         <div className="relative overflow-hidden">
           <div
-            ref={scrollContainerRef}
-            className="flex gap-6 transition-transform duration-500 ease-out"
+            className="flex gap-6"
             style={{
-              transform: `translateX(calc(-${currentIndex * (100 / itemsPerView)}% - ${
-                currentIndex * 24
-              }px))`,
+              transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+              transition: transition
+                ? "transform 0.5s ease"
+                : "none",
             }}
           >
-            {equipments.map((item, index) => (
+            {loopItems.map((item, index) => (
               <div
                 key={index}
-                className="carousel-card flex-shrink-0 w-full sm:w-1/4 group cursor-pointer"
-                onMouseEnter={() => handleCardHover(index)}
+                className="flex-shrink-0 w-full sm:w-1/4 group"
               >
-                <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 h-80 sm:h-96">
-                  {/* Image */}
+                <div className="relative rounded-2xl overflow-hidden shadow-lg h-80 sm:h-96">
                   <img
                     src={item.image}
                     alt={item.name}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
                   />
-
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
-
-                  {/* Text Content */}
-                  <div className="absolute bottom-0 left-0 right-0 p-6 transform group-hover:translate-y-0 transition-transform duration-300">
-                    <h3 className="text-white text-lg sm:text-xl font-bold">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 p-6">
+                    <h3 className="text-white text-lg font-bold">
                       {item.name}
                     </h3>
                   </div>
@@ -150,13 +153,6 @@ const EquipmentCarousel = () => {
           </div>
         </div>
 
-        {/* Slide Counter */}
-        <div className="mt-10 text-center">
-          <p className="text-gray-600 text-sm">
-            Showing {currentIndex + 1} - {Math.min(currentIndex + itemsPerView, equipments.length)} of{" "}
-            {equipments.length} items
-          </p>
-        </div>
       </div>
     </section>
   );
