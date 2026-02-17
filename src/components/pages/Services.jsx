@@ -13,7 +13,7 @@ const servicesData = [
     title: "Fashion Shows",
     description:
       "From initial conception and budget development through on-site event coordination, we provide complete production services for fashion shows. Over the past years, we have organized fashion shows for a large number of clients and ensure them of timely execution of the necessary tasks.",
-    image: "https://images.unsplash.com/photo-1521335629791-ce4aec67dd53",
+    image: "https://media.istockphoto.com/id/2153393620/photo/beautiful-young-women-dancing-under-the-blue-neon-lights-in-nightclub.jpg?s=612x612&w=0&k=20&c=z9Q79sgEUrJ8z9Z1gMgMgz2gBsroQRK-2ChfcQxbCRE=",
     reverse: true,
     letter: "F",
   },
@@ -72,52 +72,57 @@ const Services = () => {
       {/* SERVICES LIST */}
       <section className="bg-[#f3f3f3] py-24">
         <div className="max-w-7xl mx-auto px-6 space-y-32">
-          {servicesData.map((service, index) => (
-            <div
-              key={index}
-              className={`grid md:grid-cols-2 gap-16 items-center ${
-                service.reverse ? "md:flex-row-reverse" : ""
-              }`}
-            >
-              {/* TEXT SIDE */}
-              <div className="relative">
-                {/* Big Background Letter */}
-                <span className="absolute -top-16 left-0 text-[200px] font-bold text-gray-200 z-0 select-none">
-                  {service.letter}
-                </span>
+          {servicesData.map((service, index) => {
+            const isEven = index % 2 === 0;
 
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="text-red-600 uppercase text-sm tracking-widest">
-                      Services
-                    </span>
-                    <div className="h-[2px] w-24 bg-red-600"></div>
+            return (
+              <div
+                key={index}
+                className={`flex flex-col md:flex-row items-center gap-16 ${
+                  !isEven ? "md:flex-row-reverse" : ""
+                }`}
+              >
+                {/* IMAGE SIDE */}
+                <div className="relative flex justify-center w-full md:w-1/2">
+                  <div className="absolute bg-red-600 w-[90%] h-[90%] -bottom-6 -right-6 z-0"></div>
+
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="relative z-10 w-full max-w-lg object-cover shadow-lg"
+                  />
+                </div>
+
+                {/* TEXT SIDE */}
+                <div className="relative w-full md:w-1/2">
+                  {/* Big Background Letter */}
+                  <span className="absolute -top-16 left-0 text-[200px] font-bold text-gray-200 z-0 select-none">
+                    {service.letter}
+                  </span>
+
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-4 mb-4">
+                      <span className="text-red-600 uppercase text-sm tracking-widest">
+                        Services
+                      </span>
+                      <div className="h-[2px] w-24 bg-red-600"></div>
+                    </div>
+
+                    <h2 className="text-5xl font-extrabold uppercase mb-6">
+                      {service.title}
+                    </h2>
+
+                    <p className="text-gray-600 leading-relaxed">
+                      {service.description}
+                    </p>
                   </div>
-
-                  <h2 className="text-5xl font-extrabold uppercase mb-6">
-                    {service.title}
-                  </h2>
-
-                  <p className="text-gray-600 leading-relaxed">
-                    {service.description}
-                  </p>
                 </div>
               </div>
-
-              {/* IMAGE SIDE */}
-              <div className="relative flex justify-center">
-                <div className="absolute bg-red-600 w-[90%] h-[90%] -bottom-6 -right-6 z-0"></div>
-
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="relative z-10 w-full max-w-lg object-cover shadow-lg"
-                />
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
+
       <Footer />
     </>
   );

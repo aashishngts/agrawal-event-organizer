@@ -1,21 +1,22 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import waveBg from "../../assets/images/wave-abstract-image.png"; // adjust path if needed
 
 const services = [
   {
     title: "LIVE CONCERTS",
     image:
-      "https://images.unsplash.com/photo-1521335629791-ce4aec67dd53?w=800&h=900&fit=crop",
+      "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "FASHION SHOWS",
     image:
-      "https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1543728069-a3f97c5a2f32?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "THEME PARTIES",
     image:
-      "https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=900&fit=crop",
+      "https://media.istockphoto.com/id/2196025063/photo/summer-winter-candle-light-dinner-party-theme-with-fine-dinning-arrangements-fairy-lights-and.webp?a=1&b=1&s=612x612&w=0&k=20&c=4bS0MWfwgmvcYkvpgPjVChx2efBD28Q5xH-IeAnvEpQ=",
   },
   {
     title: "CORPORATE MEETS",
@@ -24,15 +25,24 @@ const services = [
   },
 ];
 
-
 const Services = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="py-24 bg-[#f4f4f4]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="relative py-24 bg-[#f4f4f4] overflow-hidden">
+      
+      {/* Background Wave Image */}
+      <img
+        src={waveBg}
+        alt="background wave"
+        className="absolute -top-32 -left-32 w-[750px] opacity-10 pointer-events-none select-none"
+      />
+
+      <div className="relative max-w-7xl mx-auto px-6">
+        
         {/* Top Section */}
         <div className="grid md:grid-cols-3 gap-10 items-center mb-16">
+          
           {/* Left Heading */}
           <div>
             <p className="text-red-600 font-semibold tracking-[0.3em] uppercase text-sm">
@@ -84,7 +94,7 @@ const Services = () => {
                 </h3>
               </div>
 
-              {/* Hover Effect Border */}
+              {/* Hover Border */}
               <div className="absolute inset-0 border-2 border-transparent group-hover:border-red-600 transition-all duration-300"></div>
             </div>
           ))}

@@ -35,7 +35,7 @@ const equipments = [
   {
     name: "Audio Mixing Console",
     image:
-      "https://images.unsplash.com/photo-1581093588401-22d70e6b3b1f?w=500&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1665221965525-87fe35deabdd?q=80&w=756&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     name: "Stage Lighting System",

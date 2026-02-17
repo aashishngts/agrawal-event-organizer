@@ -1,4 +1,5 @@
 import owner from "../../assets/owner1.webp";
+import waveBg from "../../assets/images/wave-abstract-2.png"; // <-- add this
 import Footer from "../layout/Footer";
 
 const About = () => {
@@ -22,8 +23,17 @@ const About = () => {
       </section>
 
       {/* ABOUT CONTENT SECTION */}
-      <section className="bg-gray-100 py-20">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+      <section className="relative bg-gray-100 py-20 overflow-hidden">
+        
+        {/* Background Wave Image */}
+        <img
+          src={waveBg}
+          alt="background wave"
+          className="absolute bottom-0 left-0 w-[950px] opacity-10 pointer-events-none select-none"
+        />
+
+        <div className="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+          
           <div>
             <h2 className="text-xl font-semibold tracking-widest uppercase mb-6 text-red-600">
               Our Legacy & Vision
@@ -65,6 +75,7 @@ const About = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
             {/* MUSIC & LIGHTING CARD */}
             <div className="bg-gray-50 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 group">
               <div className="overflow-hidden">
@@ -130,6 +141,7 @@ const About = () => {
                 </ul>
               </div>
             </div>
+
           </div>
         </div>
       </section>
