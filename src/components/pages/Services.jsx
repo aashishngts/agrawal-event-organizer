@@ -13,7 +13,7 @@ const servicesData = [
     description:
       "From initial conception and budget development through on-site event coordination, we provide complete production services for fashion shows. Over the past years, we have organized fashion shows for a large number of clients and ensure them of timely execution of the necessary tasks.",
     image:
-      "https://media.istockphoto.com/id/2153393620/photo/beautiful-young-women-dancing-under-the-blue-neon-lights-in-nightclub.jpg",
+      "https://images.unsplash.com/photo-1733322992706-1210ca79f4df?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     letter: "F",
   },
   {
