@@ -29,7 +29,7 @@ const Services = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="relative py-24 bg-[#f4f4f4] overflow-hidden">
+    <section className="relative py-12 bg-[#f4f4f4] overflow-hidden">
       {/* Background Wave Image */}
       <img
         src={waveBg}
@@ -37,7 +37,7 @@ const Services = () => {
         className="absolute -top-32 -left-32 w-[750px] opacity-10 pointer-events-none select-none"
       />
 
-      <div className="relative max-w-full mx-4 px-6">
+      <div className="relative max-w-full mx-2 px-6">
         {/* Top Section */}
         <div className="grid md:grid-cols-3 gap-5 items-center mb-8">
           {/* Left Heading */}

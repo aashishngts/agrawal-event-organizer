@@ -65,8 +65,8 @@ const events = [
 
 const EventTypes = () => {
   return (
-    <section className="py-24 bg-gray-50">
-      <div className="max-w-full mx-4 px-6">
+    <section className="py-12 bg-gray-50">
+      <div className="max-w-full mx-2 px-6">
         {/* Header */}
         <div className="text-center mb-20">
           <p className="uppercase tracking-[0.3em] text-red-600 text-sm font-semibold">

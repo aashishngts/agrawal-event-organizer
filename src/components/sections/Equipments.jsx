@@ -37,8 +37,8 @@ const equipmentsData = [
 
 export default function Equipments() {
   return (
-    <section className="bg-[#f3f3f3] py-14 sm:py-16 md:py-20 lg:py-24">
-      <div className="max-w-full mx-4 px-4 sm:px-6 lg:px-10 space-y-16 sm:space-y-20 md:space-y-28">
+    <section className="bg-[#f3f3f3] py-14 sm:py-16 md:py-20 lg:py-12">
+      <div className="max-w-full mx-2 px-4 sm:px-6 lg:px-10 space-y-16 sm:space-y-20 md:space-y-28">
         {/* Heading */}
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase mb-3 sm:mb-4">

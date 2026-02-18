@@ -4,7 +4,7 @@ import Owner from "../../assets/owner1.webp";
 const Founder = () => {
   return (
     <section className="py-16 md:py-28 bg-gray-50">
-      <div className="max-w-full mx-4 px-4 md:px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+      <div className="max-w-full mx-2 px-4 md:px-6 grid md:grid-cols-2 gap-12 md:gap-20 items-center">
         
         {/* LEFT - Image Container */}
         <div className="flex justify-center md:justify-start w-full">

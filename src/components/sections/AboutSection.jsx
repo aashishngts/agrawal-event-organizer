@@ -4,8 +4,8 @@ const About = () => {
   return (
     <>
       {/* ================= ABOUT SECTION ================= */}
-      <section className="py-24 bg-white">
-        <div className="max-w-full mx-4 px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <section className="py-12 bg-white">
+        <div className="max-w-full mx-2 px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div className="grid grid-cols-2 gap-6">
             <div className="col-span-2 rounded-2xl overflow-hidden shadow-xl">
               <img

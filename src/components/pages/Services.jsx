@@ -67,7 +67,7 @@ const Services = () => {
       </section>
 
       {/* SERVICES SECTION */}
-      <section className="py-16 sm:py-20 lg:py-28 overflow-hidden mx-4">
+      <section className="py-16 sm:py-20 lg:py-28 overflow-hidden mx-2">
         <div className="max-w-6xl xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 lg:space-y-28">
           {servicesData.map((service, index) => {
             const isEven = index % 2 === 0;

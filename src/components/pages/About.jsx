@@ -32,7 +32,7 @@ const About = () => {
           className="absolute bottom-0 left-0 w-[980px] opacity-10 pointer-events-none select-none"
         />
 
-        <div className="relative max-w-full mx-4 md:mx-4 px-4 md:px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <div className="relative max-w-full mx-2 md:mx-2 px-4 md:px-6 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="order-2 md:order-1 text-center md:text-left">
             <h2 className="text-lg sm:text-xl font-semibold tracking-widest uppercase mb-6 text-red-600">
               Our Legacy & Vision
@@ -69,8 +69,8 @@ const About = () => {
       </section>
 
       {/* EQUIPMENT CARDS SECTION */}
-      <section className="py-24 bg-white">
-        <div className="max-w-full mx-4 px-6">
+      <section className="py-12 bg-white">
+        <div className="max-w-full mx-2 px-6">
           <div className="text-center mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase mb-3 sm:mb-4">
               Our Equipment & Services

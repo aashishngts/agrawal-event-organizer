@@ -34,8 +34,8 @@ export default function InstagramReel() {
   ];
 
   return (
-    <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-[#f9f9f9]">
-      <div className="max-w-full mx-4 px-4 sm:px-6 lg:px-10 text-center">
+    <section className="py-14 sm:py-16 md:py-20 lg:py-12 bg-[#f9f9f9]">
+      <div className="max-w-full mx-2 px-4 sm:px-6 lg:px-10 text-center">
         {/* Heading */}
         <p className="text-red-600 uppercase tracking-widest text-xs sm:text-sm font-semibold">
           Follow Us

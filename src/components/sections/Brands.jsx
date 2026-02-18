@@ -131,7 +131,7 @@ const EquipmentCarousel = () => {
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-full mx-4 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-full mx-2 px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-6 mb-8 sm:mb-12">

@@ -35,7 +35,7 @@ const Events = () => {
 
       {/* GALLERY */}
       <section className="bg-[#f3f3f3] pb-20">
-        <div className="max-w-full mx-4 px-6">
+        <div className="max-w-full mx-2 px-6">
           <div className="grid grid-cols-6 gap-4">
             {/* Big Left Image */}
             <img
@@ -111,7 +111,7 @@ const Events = () => {
 
       {/* CTA SECTION */}
       <section
-        className="relative py-24 bg-cover bg-center text-center"
+        className="relative py-12 bg-cover bg-center text-center"
         style={{
           backgroundImage:
             "url('https://images.unsplash.com/photo-1506157786151-b8491531f063?w=2000&auto=format&fit=crop&q=80')",
