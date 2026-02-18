@@ -23,8 +23,6 @@ const Contact = () => {
       {/* CONTACT SECTION */}
       <section className="py-12 sm:py-16 md:py-20 bg-gray-50">
         <div className="max-w-5xl xl:max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-
-          
           {/* LEFT SIDE - FORM */}
           <div className="bg-white shadow-xl rounded-xl sm:rounded-2xl overflow-hidden w-full lg:max-w-md">
             <div className="bg-red-600 text-white p-4 sm:p-6">
@@ -66,7 +64,6 @@ const Contact = () => {
 
           {/* RIGHT SIDE - CONTACT INFO */}
           <div className="flex flex-col justify-center gap-4 sm:gap-6 md:gap-8 w-full lg:max-w-md">
-            
             {/* PHONE */}
             <div className="bg-white shadow-md sm:shadow-lg p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl flex items-start gap-3 sm:gap-4 hover:shadow-2xl transition">
               <div className="text-red-600 text-2xl sm:text-3xl">📞</div>
@@ -75,8 +72,7 @@ const Contact = () => {
                   Phone
                 </h4>
                 <p className="text-gray-600 text-xs sm:text-sm">
-                  +91 731 4044289 <br />
-                  +91 98270 37289
+                  +91 99999 99999
                 </p>
               </div>
             </div>
@@ -89,7 +85,7 @@ const Contact = () => {
                   Email
                 </h4>
                 <p className="text-gray-600 text-xs sm:text-sm">
-                  info@agarwalsound.com
+                  agrawalsoundlight@gmail.com
                 </p>
               </div>
             </div>
@@ -102,13 +98,10 @@ const Contact = () => {
                   Address
                 </h4>
                 <p className="text-gray-600 text-xs sm:text-sm">
-                  10, Race Course Road,
-                  <br />
-                  Indore - 452001
+                  10, Race Course Road, <br />Indore - 452001
                 </p>
               </div>
             </div>
-
           </div>
         </div>
       </section>
