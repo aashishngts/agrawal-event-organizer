@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
 
         {/* ================= CONTACT GRID ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-sm text-center md:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 text-sm text-center md:text-left justify-items-center">
           {/* Branch Office */}
           <div>
             <h3 className="text-red-600 uppercase tracking-widest mb-4">
