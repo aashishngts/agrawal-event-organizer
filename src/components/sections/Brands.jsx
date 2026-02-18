@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const equipments = [
@@ -44,16 +44,32 @@ const equipments = [
   },
 ];
 
+// Duplicate for seamless loop
 const loopItems = [...equipments, ...equipments];
+
+const GAP = 24; // px — matches gap-6
 
 const EquipmentCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [transition, setTransition] = useState(true);
+  const [isTransitioning, setIsTransitioning] = useState(true);
   const [itemsPerView, setItemsPerView] = useState(4);
-
+  const [containerWidth, setContainerWidth] = useState(0);
+  const containerRef = useRef(null);
   const total = equipments.length;
 
-  // ✅ Responsive items per view
+  // Measure container
+  useEffect(() => {
+    const measure = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+      }
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
+  // Responsive items per view
   useEffect(() => {
     const updateItems = () => {
       if (window.innerWidth < 640) {
@@ -64,48 +80,58 @@ const EquipmentCarousel = () => {
         setItemsPerView(4);
       }
     };
-
     updateItems();
     window.addEventListener("resize", updateItems);
     return () => window.removeEventListener("resize", updateItems);
   }, []);
 
-  // 🔥 Auto Scroll
+  // Auto scroll
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => prev + 1);
     }, 2500);
-
     return () => clearInterval(interval);
   }, []);
 
-  // 🔁 Seamless Reset
+  // Seamless loop reset
   useEffect(() => {
     if (currentIndex >= total) {
-      setTimeout(() => {
-        setTransition(false);
+      const t1 = setTimeout(() => {
+        setIsTransitioning(false);
         setCurrentIndex(0);
       }, 500);
-
-      setTimeout(() => {
-        setTransition(true);
+      const t2 = setTimeout(() => {
+        setIsTransitioning(true);
       }, 550);
+      return () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+      };
     }
   }, [currentIndex, total]);
 
   const scroll = (dir) => {
     if (dir === "prev") {
-      setCurrentIndex((prev) =>
-        prev === 0 ? total - 1 : prev - 1
-      );
+      setCurrentIndex((prev) => (prev === 0 ? total - 1 : prev - 1));
     } else {
       setCurrentIndex((prev) => prev + 1);
     }
   };
 
+  // ✅ Correct card width: account for gaps between cards
+  // Total gaps in view = itemsPerView - 1
+  // cardWidth = (containerWidth - gaps) / itemsPerView
+  const cardWidth =
+    containerWidth > 0
+      ? (containerWidth - GAP * (itemsPerView - 1)) / itemsPerView
+      : 0;
+
+  // Offset per slide = cardWidth + gap
+  const slideOffset = cardWidth + GAP;
+
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-full mx-4 px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-6 mb-8 sm:mb-12">
@@ -122,32 +148,34 @@ const EquipmentCarousel = () => {
           <div className="flex gap-3 sm:gap-4">
             <button
               onClick={() => scroll("prev")}
-              className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-black text-white flex items-center justify-center"
+              className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800 transition-colors"
             >
               <ChevronLeft size={18} />
             </button>
             <button
               onClick={() => scroll("next")}
-              className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-black text-white flex items-center justify-center"
+              className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-black text-white flex items-center justify-center hover:bg-gray-800 transition-colors"
             >
               <ChevronRight size={18} />
             </button>
           </div>
         </div>
 
-        {/* Carousel */}
-        <div className="relative overflow-hidden">
+        {/* ✅ overflow-hidden ONLY on the track wrapper, not the outer container */}
+        <div className="overflow-hidden" ref={containerRef}>
           <div
-            className="flex gap-4 sm:gap-6"
+            className="flex"
             style={{
-              transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
-              transition: transition ? "transform 0.5s ease" : "none",
+              gap: `${GAP}px`,
+              transform: `translateX(-${currentIndex * slideOffset}px)`,
+              transition: isTransitioning ? "transform 0.5s ease" : "none",
             }}
           >
             {loopItems.map((item, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 group"
+                className="flex-shrink-0 group"
+                style={{ width: cardWidth > 0 ? `${cardWidth}px` : "auto" }}
               >
                 <div className="relative rounded-xl sm:rounded-2xl overflow-hidden shadow-md sm:shadow-lg h-56 sm:h-72 md:h-80 lg:h-96">
                   <img

@@ -1,12 +1,8 @@
 import HeroImages from "../../assets/Hero2.jpg";
 
-
-
 const Hero = () => {
   return (
-    <section
-      className="relative h-screen w-full flex items-center justify-center text-white overflow-hidden"
-    >
+    <section className="relative h-screen w-full flex items-center justify-center text-white overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center scale-105"
@@ -21,7 +17,6 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl">
-        
         <h1 className="text-4xl md:text-7xl font-extrabold leading-tight uppercase tracking-wide">
           <span className="text-white">Create</span>{" "}
           <span className="text-red-600">Unforgettable</span> <br />
@@ -34,25 +29,32 @@ const Hero = () => {
         </p>
 
         {/* Buttons */}
-        <div className="mt-12 flex justify-center gap-6 flex-wrap">
-          
-          {/* Creative Enquiry Button */}
-          <button className="relative px-10 py-4 uppercase tracking-widest font-semibold 
-                             bg-red-600 rounded-full 
-                             shadow-[0_0_20px_rgba(220,38,38,0.7)] 
-                             hover:shadow-[0_0_40px_rgba(220,38,38,1)] 
-                             hover:scale-105
-                             transition-all duration-300">
+        <div className="mt-8 sm:mt-12 flex justify-center gap-4 sm:gap-6 flex-wrap">
+          {/* Enquiry Button */}
+          <button
+            className="relative px-6 py-2.5 sm:px-10 sm:py-4 
+               text-xs sm:text-sm md:text-base 
+               uppercase tracking-widest font-semibold 
+               bg-red-600 rounded-full 
+               shadow-[0_0_15px_rgba(220,38,38,0.6)] 
+               hover:shadow-[0_0_40px_rgba(220,38,38,1)] 
+               hover:scale-105
+               transition-all duration-300"
+          >
             Enquiry Now
           </button>
 
           {/* Glass Button */}
-          <button className="px-10 py-4 uppercase tracking-widest font-semibold 
-                             border border-white/30 
-                             bg-white/10 backdrop-blur-md 
-                             rounded-full 
-                             hover:bg-white hover:text-black 
-                             transition-all duration-300">
+          <button
+            className="px-6 py-2.5 sm:px-10 sm:py-4 
+               text-xs sm:text-sm md:text-base 
+               uppercase tracking-widest font-semibold 
+               border border-white/30 
+               bg-white/10 backdrop-blur-md 
+               rounded-full 
+               hover:bg-white hover:text-black 
+               transition-all duration-300"
+          >
             View Events
           </button>
         </div>

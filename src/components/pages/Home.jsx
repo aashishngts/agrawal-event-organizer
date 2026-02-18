@@ -7,8 +7,10 @@ import Founder from "../sections/Founder";
 import Hero from "../sections/Hero";
 import InstagramReel from "../sections/InstagramReel";
 import Services from "../sections/Services";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
+  
   return (
     <>
       <Hero />

@@ -35,7 +35,7 @@ export default function InstagramReel() {
 
   return (
     <section className="py-14 sm:py-16 md:py-20 lg:py-24 bg-[#f9f9f9]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 text-center">
+      <div className="max-w-full mx-4 px-4 sm:px-6 lg:px-10 text-center">
         {/* Heading */}
         <p className="text-red-600 uppercase tracking-widest text-xs sm:text-sm font-semibold">
           Follow Us
@@ -110,14 +110,7 @@ export default function InstagramReel() {
                     muted
                     playsInline
                     preload="auto"
-                    className="
-                      w-full 
-                      h-[300px] 
-                      sm:h-[350px] 
-                      md:h-[380px] 
-                      lg:h-[420px] 
-                      object-cover
-                    "
+                    className=" w-full aspect-[9/12] object-cover"
                   />
                 </a>
               </SwiperSlide>

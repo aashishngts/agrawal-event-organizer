@@ -37,33 +37,28 @@ const Services = () => {
         className="absolute -top-32 -left-32 w-[750px] opacity-10 pointer-events-none select-none"
       />
 
-      <div className="relative max-w-full mx-10 px-6">
+      <div className="relative max-w-full mx-4 px-6">
         {/* Top Section */}
-        <div className="grid md:grid-cols-3 gap-10 items-center mb-16">
+        <div className="grid md:grid-cols-3 gap-5 items-center mb-8">
           {/* Left Heading */}
           <div>
             <p className="text-red-600 font-semibold tracking-[0.3em] uppercase text-sm">
               Our Services
             </p>
-            <h2 className="text-5xl md:text-6xl font-extrabold mt-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase mb-3 sm:mb-4">
               WHAT WE DO
             </h2>
           </div>
 
           {/* Description */}
           <div className="md:col-span-2 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-            <p className="text-gray-600 text-lg max-w-2xl">
+            <p className="text-xs sm:text-sm md:text-base text-gray-600 max-w-lg sm:max-w-xl md:max-w-2xl mx-auto ">
               Whether you’re planning a wedding or corporate event for 100
               guests or 10,000+, we work with you to create a memorable event
               that will WOW your crowd. Check out how we can serve you!
             </p>
 
-            <button
-              onClick={() => navigate("/services")}
-              className="bg-red-600 text-white px-8 py-4 uppercase tracking-widest font-semibold hover:bg-black transition-all duration-300"
-            >
-              All Services
-            </button>
+            
           </div>
         </div>
 

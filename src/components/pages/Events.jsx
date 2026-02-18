@@ -1,9 +1,11 @@
 import Footer from "../layout/Footer";
+import { useNavigate } from "react-router-dom";
 
 const Events = () => {
+  const navigate = useNavigate();
+
   return (
     <>
-      
       {/* HERO SECTION */}
       <section
         className="h-[40vh] sm:h-[50vh] md:h-80 bg-cover bg-center relative flex items-center justify-center text-center"
@@ -33,8 +35,8 @@ const Events = () => {
 
       {/* GALLERY */}
       <section className="bg-[#f3f3f3] pb-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-3 gap-4">
+        <div className="max-w-full mx-4 px-6">
+          <div className="grid grid-cols-6 gap-4">
             {/* Big Left Image */}
             <img
               src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=1200&auto=format&fit=crop&q=80"
@@ -79,21 +81,27 @@ const Events = () => {
       <section className="bg-white py-20">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center">
           <div>
-            <h3 className="text-5xl font-bold text-red-600">7500+</h3>
+            <h3 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase mb-3 sm:mb-4 font-bold text-red-600">
+              7500+
+            </h3>
             <p className="mt-3 text-gray-600 uppercase tracking-widest text-sm">
               Events Executed
             </p>
           </div>
 
           <div>
-            <h3 className="text-5xl font-bold text-red-600">30+</h3>
+            <h3 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase mb-3 sm:mb-4 text-red-600">
+              30+
+            </h3>
             <p className="mt-3 text-gray-600 uppercase tracking-widest text-sm">
               Cities Served
             </p>
           </div>
 
           <div>
-            <h3 className="text-5xl font-bold text-red-600">20+</h3>
+            <h3 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase mb-3 sm:mb-4 text-red-600">
+              20+
+            </h3>
             <p className="mt-3 text-gray-600 uppercase tracking-widest text-sm">
               Years Experience
             </p>
@@ -121,7 +129,10 @@ const Events = () => {
             staging, and technical excellence that leaves a lasting impact.
           </p>
 
-          <button className="bg-red-600 px-8 py-3 text-white uppercase tracking-widest hover:bg-red-700 transition">
+          <button
+            onClick={() => navigate("/contact")}
+            className=" bg-red-600  px-5 py-2.5  sm:px-6 sm:py-3  md:px-8 md:py-3.5 text-xs sm:text-sm md:text-base text-white uppercase tracking-widest  rounded-md hover:bg-red-700  transition duration-300"
+          >
             Get In Touch
           </button>
         </div>

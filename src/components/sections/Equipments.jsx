@@ -4,14 +4,14 @@ const equipmentsData = [
   {
     title: "Stage & Truss Systems",
     description:
-      "Custom stage platforms, heavy-duty truss systems and secure rigging designed for concerts, weddings and large-scale productions.",
+      "We design and install custom stage platforms, heavy-duty truss systems and secure rigging solutions tailored for concerts, corporate events, weddings and large-scale productions. Our structures are engineered for safety, durability and seamless integration with lighting, audio and LED setups. From compact indoor stages to massive outdoor festival platforms, we ensure stability, precision alignment and flawless execution.",
     image: "https://legendtruss.in/images/banner2.jpg",
     letter: "S",
   },
   {
     title: "Professional Sound Systems",
     description:
-      "Line array speakers, digital mixing consoles, subwoofers and precision audio calibration for immersive sound experiences.",
+      "Our advanced line array speaker systems, digital mixing consoles, subwoofers and monitoring solutions deliver crystal-clear audio across venues of all sizes. We provide complete sound design, acoustic calibration and live mixing to ensure balanced frequencies and immersive audience experiences. Whether it's a high-energy concert or a corporate conference, our sound systems guarantee powerful, distortion-free performance.",
     image:
       "https://www.shutterstock.com/image-photo/installation-professional-sound-light-stage-600nw-2025853667.jpg",
     letter: "P",
@@ -19,7 +19,7 @@ const equipmentsData = [
   {
     title: "Advanced Lighting",
     description:
-      "Moving heads, LED pars, lasers and special effects that transform venues into visually stunning live experiences.",
+      "We offer cutting-edge lighting systems including moving heads, LED pars, beam lights, lasers and synchronized special effects. Our lighting designs enhance mood, energy and stage presence while complementing the event theme. With intelligent programming and dynamic control systems, we transform ordinary venues into visually stunning live experiences that captivate every audience.",
     image:
       "https://iqrorwxhljollr5q.leadongcdn.com/cloud/mlBpmKojRljSkrrojjlpj/custom-lighting-truss-design.jpg",
     letter: "L",
@@ -27,17 +27,18 @@ const equipmentsData = [
   {
     title: "LED Video Walls",
     description:
-      "High-definition LED screens for branding, live streaming, event visuals and audience engagement.",
+      "Our high-definition LED video walls provide vibrant visuals, live streaming integration, branding displays and immersive stage backdrops. Designed for indoor and outdoor environments, our LED panels deliver high brightness, seamless connectivity and crystal-clear resolution. From promotional branding to live event broadcasting, we ensure impactful visual communication for every audience.",
     image:
       "https://image.made-in-china.com/202f0j00oYuGleScAjkv/Stage-Rental-Outdoor-LED-Display-Video-Wall-IP65-High-Brightness-Waterproof-Easy-Maintenance.webp",
     letter: "V",
   },
 ];
 
+
 export default function Equipments() {
   return (
     <section className="bg-[#f3f3f3] py-14 sm:py-16 md:py-20 lg:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 space-y-16 sm:space-y-20 md:space-y-28">
+      <div className="max-w-full mx-4 px-4 sm:px-6 lg:px-10 space-y-16 sm:space-y-20 md:space-y-28">
         {/* Heading */}
         <div className="text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase mb-3 sm:mb-4">
@@ -60,30 +61,26 @@ export default function Equipments() {
               }`}
             >
               {/* IMAGE SIDE */}
-              <div className="relative flex justify-center w-full md:w-1/2">
-                <div
-                  className="
-      absolute 
-      w-[85%] h-[85%] 
-      -bottom-2 -right-2 
-      sm:w-[90%] sm:h-[90%] 
-      sm:-bottom-4 sm:-right-4 
-      md:-bottom-6 md:-right-6 
-      z-0 rounded-sm
-    "
-                  style={{
-                    backgroundColor: "#dc2626",
-                    backgroundImage:
-                      "radial-gradient(rgba(255,255,255,0.25) 1px, transparent 1px)",
-                    backgroundSize: "12px 12px",
-                  }}
-                ></div>
+              <div className="w-full md:w-1/2 flex justify-center md:justify-start">
+                <div className="relative w-full max-w-md md:max-w-lg">
+                  {/* Red Background */}
+                  <div
+                    className=" absolute inset-0 translate-x-2 translate-y-2 md:translate-x-4 md:translate-y-4 z-0 rounded-md "
+                    style={{
+                      backgroundColor: "#dc2626",
+                      backgroundImage:
+                        "radial-gradient(rgba(255,255,255,0.25) 1px, transparent 1px)",
+                      backgroundSize: "12px 12px",
+                    }}
+                  ></div>
 
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className=" relative z-10  w-[90%] sm:w-full  max-w-xs sm:max-w-sm md:max-w-lg  object-cover shadow-lg"
-                />
+                  {/* Image */}
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className=" relative z-10 w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[420px] object-cover shadow-xl rounded-md"
+                  />
+                </div>
               </div>
 
               {/* TEXT SIDE */}

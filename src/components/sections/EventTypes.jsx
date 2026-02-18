@@ -66,14 +66,14 @@ const events = [
 const EventTypes = () => {
   return (
     <section className="py-24 bg-gray-50">
-      <div className="max-w-full mx-10 px-6">
+      <div className="max-w-full mx-4 px-6">
         {/* Header */}
         <div className="text-center mb-20">
           <p className="uppercase tracking-[0.3em] text-red-600 text-sm font-semibold">
             Event Categories
           </p>
-          <h2 className="text-5xl font-extrabold mt-4">Experiences We Power</h2>
-          <p className="mt-6 text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase mb-3 sm:mb-4">Experiences We Power</h2>
+          <p className="text-xs sm:text-sm md:text-base text-gray-600 max-w-lg sm:max-w-xl md:max-w-2xl mx-auto mt-6 text-gray-600 max-w-2xl mx-auto">
             From grand weddings to high-scale public gatherings, we engineer
             sound, lighting, and stage environments built for impact.
           </p>

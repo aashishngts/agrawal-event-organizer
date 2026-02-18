@@ -21,7 +21,7 @@ const Footer = () => {
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>
 
-      <div className="relative z-10 max-w-full mx-10 px-4 md:px-6">
+      <div className="relative z-10 max-w-full mx-4 px-4 md:px-6">
         {/* ================= LOGO & DESCRIPTION ================= */}
         <div className="text-center mb-12">
           <img
