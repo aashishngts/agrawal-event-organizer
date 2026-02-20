@@ -1,36 +1,85 @@
 import React from "react";
+import avolites from '../../assets/equipment-img/grandMA2_Arena.png';
+import cowbell1 from '../../assets/equipment-img/Pearl_Master_2.png';
+import cowbell3 from '../../assets/equipment-img/Neumann_3.png';
+import dasEvent from '../../assets/equipment-img/DAS_EVENT_210.png';
+import elight from '../../assets/equipment-img/Elight_1.webp';
+import jblSrx from '../../assets/equipment-img/DAS_LARA_1.jpg';
+import neumann from '../../assets/equipment-img/Neumann_1.png';
+import pearlMaster from '../../assets/equipment-img/ProfessionalSoundSystems.png';
+import tigerTouch from '../../assets/equipment-img/Tiger_Touch_1.png';
+import universalTruss from '../../assets/equipment-img/Universal_Truss_2.png';
 
 const equipmentsData = [
   {
     title: "Stage & Truss Systems",
     description:
       "We design and install custom stage platforms, heavy-duty truss systems and secure rigging solutions tailored for concerts, corporate events, weddings and large-scale productions. Our structures are engineered for safety, durability and seamless integration with lighting, audio and LED setups. From compact indoor stages to massive outdoor festival platforms, we ensure stability, precision alignment and flawless execution.",
-    image: "https://legendtruss.in/images/banner2.jpg",
+    image: universalTruss,
     letter: "S",
   },
   {
     title: "Professional Sound Systems",
     description:
       "Our advanced line array speaker systems, digital mixing consoles, subwoofers and monitoring solutions deliver crystal-clear audio across venues of all sizes. We provide complete sound design, acoustic calibration and live mixing to ensure balanced frequencies and immersive audience experiences. Whether it's a high-energy concert or a corporate conference, our sound systems guarantee powerful, distortion-free performance.",
-    image:
-      "https://www.shutterstock.com/image-photo/installation-professional-sound-light-stage-600nw-2025853667.jpg",
+    image: pearlMaster,
     letter: "P",
   },
   {
-    title: "Advanced Lighting",
+    title: "Advanced Stage Lighting",
     description:
-      "We offer cutting-edge lighting systems including moving heads, LED pars, beam lights, lasers and synchronized special effects. Our lighting designs enhance mood, energy and stage presence while complementing the event theme. With intelligent programming and dynamic control systems, we transform ordinary venues into visually stunning live experiences that captivate every audience.",
-    image:
-      "https://iqrorwxhljollr5q.leadongcdn.com/cloud/mlBpmKojRljSkrrojjlpj/custom-lighting-truss-design.jpg",
+      "We offer cutting-edge stage lighting systems engineered for maximum visual impact. Our professional lighting rigs feature sophisticated moving heads, LED fixtures, intelligent beam lights and synchronized special effects. With precise beam control, seamless color transitions and advanced programming capabilities, we create immersive lighting designs that transform venues and captivate audiences at every moment.",
+    image: elight,
     letter: "L",
   },
   {
-    title: "LED Video Walls",
+    title: "LED Video Walls & Displays",
     description:
-      "Our high-definition LED video walls provide vibrant visuals, live streaming integration, branding displays and immersive stage backdrops. Designed for indoor and outdoor environments, our LED panels deliver high brightness, seamless connectivity and crystal-clear resolution. From promotional branding to live event broadcasting, we ensure impactful visual communication for every audience.",
-    image:
-      "https://image.made-in-china.com/202f0j00oYuGleScAjkv/Stage-Rental-Outdoor-LED-Display-Video-Wall-IP65-High-Brightness-Waterproof-Easy-Maintenance.webp",
+      "Our high-definition LED video wall systems provide stunning vibrant visuals, live streaming integration and immersive stage backdrops. Designed for both indoor and outdoor environments, our panels deliver exceptional brightness, seamless connectivity and crystal-clear resolution. Perfect for promotional branding, live event broadcasting and dynamic visual storytelling that engages every audience member.",
+    image: tigerTouch,
     letter: "V",
+  },
+  {
+    title: "Percussion & Drum Kits",
+    description:
+      "Premium percussion instruments and professional-grade drum kits engineered for superior performances. Our collection features industry-leading brands with exceptional sound quality, responsive dynamics and flawless tuning. Ideal for studio recordings, live concerts and theatrical productions, our percussion equipment delivers the perfect beat and rhythm for any musical performance.",
+    image: cowbell1,
+    letter: "P",
+  },
+  {
+    title: "Cymbal Stands & Rigging",
+    description:
+      "Professional-grade cymbal stands and percussion rigging systems designed for optimal instrument positioning and stability. Our heavy-duty stands feature smooth adjustment mechanisms and reliable construction for all performance environments. Built to withstand intense use while maintaining perfect timing and delivering flawless acoustic clarity throughout every performance.",
+    image: cowbell3,
+    letter: "C",
+  },
+  {
+    title: "Lighting Control & Programming",
+    description:
+      "Advanced lighting control consoles and programming systems featuring intuitive interfaces for real-time event management. Our state-of-the-art control boards provide precision control over all lighting elements, special effects and synchronized cues across your entire production. With comprehensive programming features and seamless integration with all equipment, we deliver complete creative control for unforgettable live experiences.",
+    image: avolites,
+    letter: "C",
+  },
+  {
+    title: "Line Array Speaker Systems",
+    description:
+      "Professional-grade JBL line array speaker systems engineered for powerful, consistent sound distribution across large venues. Our state-of-the-art speakers deliver exceptional clarity, deep bass response and uniform coverage. Designed for concerts, festivals and large-scale events, these systems provide premium audio performance with superior reliability and acoustic excellence.",
+    image: jblSrx,
+    letter: "L",
+  },
+  {
+    title: "Compact Line Array Systems",
+    description:
+      "Versatile DAS compact line array systems designed for flexible venue configurations and rapid deployment. Our modular speaker arrays deliver professional sound quality with easy setup and configuration. Perfect for mid-sized venues, corporate events and touring productions, these systems combine portability with exceptional acoustic performance.",
+    image: dasEvent,
+    letter: "C",
+  },
+  {
+    title: "Professional Studio Microphones",
+    description:
+      "Industry-standard Neumann studio microphones engineered for pristine audio capture and broadcast quality. Our premium condenser microphones deliver exceptional clarity, natural response and professional-grade reliability. Ideal for live streaming, studio recording, podcasting and professional broadcast applications requiring studio-quality audio.",
+    image: neumann,
+    letter: "M",
   },
 ];
 
@@ -74,12 +123,14 @@ export default function Equipments() {
                     }}
                   ></div>
 
-                  {/* Image */}
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className=" relative z-10 w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[420px] object-cover shadow-xl rounded-md"
-                  />
+                  {/* White Container with Image */}
+                  <div className="relative z-10 w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[420px] bg-white rounded-md shadow-xl overflow-hidden flex items-center justify-center">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-contain p-4"
+                    />
+                  </div>
                 </div>
               </div>
 
